@@ -1,8 +1,9 @@
 Using /models/article.js to create the MongoDB schema. I have the "image" section currently set to String to base in dataUrl. 
     Can also change to Buffer, which is Mongoose binary input
 
-inside /routes/articles.js I have a post request which is correctly grabbing the req.body elements, 
-      but I cannot find a way to read the req.body.picture element into dataUrl, base64, or binary.
+inside /routes/articles.js I have a post request which is correctly grabbing the req.body elements from the _form_fields.ejs file, 
+    attempting to add these elements to the Article schema, (articles.js line 28)
+      but I cannot find a way to read the req.body.picture element into dataUrl, base64, or binary. (line 31)
       
       
  Every other part of the code works
