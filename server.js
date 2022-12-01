@@ -3,11 +3,14 @@ const mongoose = require('mongoose')
 const articleRouter = require('./routes/articles')
 const app = express()
 var path = require('path')
+const fileUpload = require("express-fileupload")
 
 mongoose.connect('mongodb://localhost/reviews')
 
 
 app.set('view engine', 'ejs')
+
+app.use(fileUpload());
 
 app.use(express.urlencoded({  extended: false  }))
 app.use('/articles' , articleRouter)

@@ -10,7 +10,7 @@ const articleSchema = new mongoose.Schema({
 
     },
     picture: {
-        type: String //type can be string for dataUrl or Buffer for binary
+        type: Buffer //type can be string for dataUrl or Buffer for binary
     },
     createdAt: {
         type: Date,
