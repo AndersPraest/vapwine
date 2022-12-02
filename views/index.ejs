@@ -19,12 +19,12 @@
         <% articles.forEach(article => { %>
           <li class="cards_item">
             <div class="card">
-              <div class="card_image"><img src= <%=article.image %> ></div>
+              <div class="card_image"><img src="data:image/png;base64,<%= article.picture %>" /></div>
               <div class="card_content">
                 <h2 class="card_title"><%= article.title %></h2>
                 <p2 class="card_date"><%= article.createdAt.toLocaleDateString() %></p2>
                 <p class="card_text"><%= article.description %></p>
-                <button class="btn card_btn">Read More</button>
+                <a href="articles/<%= article.id %>"><button class="btn card_btn">Read More</button></a>
               </div>
             </div>
           </li>

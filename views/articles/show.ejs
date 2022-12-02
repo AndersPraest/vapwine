@@ -12,8 +12,8 @@
   <div class="main">
     <h1 style="margin-bottom:2em;"><%= article.title %></h1>
     <div style="margin-bottom:2em;"><%= article.createdAt.toLocaleDateString() %></div>
+    <img src="data:image/png;base64,<%= article.picture %>" />
     <a href="/">All Articles</a>
-    <a href="/articles/edit/<%= article.id %>">Edit</a>
 
     <div>
         <%= article.description %>

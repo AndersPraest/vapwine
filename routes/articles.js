@@ -23,12 +23,13 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
+    let imgbuffer = req.files.picture.data
+    let imgb64 = imgbuffer.toString('base64');
     let article = new Article({
         title: req.body.title, // pulling the title element from req
         description: req.body.description, // pulling the description element from req
-        image: req.files.picture.data
+        picture: imgb64
     })
-        console.log(req.files.picture.data)
     try {
         article = await article.save()
         res.redirect(`/articles/${article.id}`)
