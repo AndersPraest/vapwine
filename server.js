@@ -6,7 +6,13 @@ var path = require('path')
 const fileUpload = require("express-fileupload")
 const Article = require('./models/article')
 
-mongoose.connect('mongodb://localhost/reviews')
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/reviews',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  );
 
 
 app.set('view engine', 'ejs')
