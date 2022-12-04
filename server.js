@@ -6,6 +6,12 @@ var path = require('path')
 const fileUpload = require("express-fileupload")
 const Article = require('./models/article')
 
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
+});
+
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost:27017/reviews',
     {
@@ -31,4 +37,3 @@ app.get('/', async (req,res) => {
     res.render('index', {articles: articles})
 })
 
-app.listen(5000)
